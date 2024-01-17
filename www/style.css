@@ -1,0 +1,46 @@
+* {
+	font-family: 'Courier New', Courier, monospace;
+
+	padding: 0;
+	margin: 0;
+
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 10px;
+
+	background-color: crimson;
+	color: aliceblue;
+}
+
+hr {
+	margin: 10px;
+}
+
+.graph-box {
+	max-width: 250px;
+
+	margin: 10px;
+	background-color: aliceblue;
+	border: 1px black solid;
+}
+
+.graph-bar {
+	height: 18px;
+	background-color: transparent;
+	color: black;
+	border-right: 1px solid red;
+
+	text-align: right;
+	font-size: 16px;
+	padding: 2px;
+}
+
+#log_status {
+	background-color: black;
+	padding: 3px;
+	width: fit-content;
+}
