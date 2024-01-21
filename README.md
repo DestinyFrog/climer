@@ -63,3 +63,10 @@ type Climer struct {
 O Código Javascript abre conexão com o servidor WebSocket como cliente, e sempre que recebe alguma mensagem, atualiza diretamente na página HTML na forma de um simples gráfico de barras.
 
 ![Grafico](html_graph.png)
+
+## Objetivos Futuros
+- [ ] Implementar Testes Unitários
+- [ ] Aplicar em container Docker
+- [ ] Corrigir tratamento de inseguranças no código
+- [ ] Definir configurações padrão (com Viper)
+- [ ] Salvar os dados em um Banco de Dados para análise de dados
