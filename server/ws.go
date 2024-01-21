@@ -12,7 +12,7 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-var upgrader = websocket.Upgrader{
+var upgrader = websocket.Upgrader {
 	ReadBufferSize: 1024,
 	WriteBufferSize: 1024,
 }
@@ -23,9 +23,10 @@ func OpenWSConnection(w http.ResponseWriter, r *http.Request) {
 	conn, _ := upgrader.Upgrade(w, r, nil)
 	clients = append(clients, *conn)
 
-	// for {
+	for {
 		msgType, msg, err := conn.ReadMessage()
 		if err != nil {
+			log.Printf("err: %s\n", err.Error())
 			return
 		}
 
@@ -33,7 +34,7 @@ func OpenWSConnection(w http.ResponseWriter, r *http.Request) {
 		if err = conn.WriteMessage(msgType, msg); err != nil {
 			return
 		}
-	// }
+	}
 }
 
 func UpdateConnection() {
@@ -65,7 +66,7 @@ func UpdateRoutine() {
 		time.Sleep(5 * time.Second)
 
 		if ( len( clients ) > 0) {
-			UpdateConnection()
+			go UpdateConnection()
 		}
 	}
 }

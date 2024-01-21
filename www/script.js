@@ -4,10 +4,10 @@ const graph_umidade = document.getElementById("graph-umidade")
 const log_temperatura = document.getElementById("log-temperatura")
 const log_umidade = document.getElementById("log-umidade")
 
-const graph_max = 250
+const graph_max = 300
 const max_bar_num = 6
 
-var socket = new WebSocket("ws://192.168.1.139/echo")
+var socket = new WebSocket(`ws://${location.host}/echo`)
 
 const historyTemperatura = []
 const historyUmidade = []
@@ -59,7 +59,7 @@ function drawGraph({ temperatura, umidade }) {
 	historyUmidade.forEach(d => {
 		const graph_bar_1 = document.createElement("div")
 		graph_bar_1.className = "graph-bar"
-		graph_bar_1.style.width = `${d/90 * graph_max}px`
+		graph_bar_1.style.width = `${d/100 * graph_max}px`
 		graph_bar_1.innerText = d
 		graph_umidade.appendChild( graph_bar_1 )
 	})

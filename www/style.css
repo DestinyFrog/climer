@@ -21,7 +21,7 @@ hr {
 }
 
 .graph-box {
-	max-width: 250px;
+	max-width: 300px;
 
 	margin: 10px;
 	background-color: aliceblue;
@@ -43,4 +43,7 @@ hr {
 	background-color: black;
 	padding: 3px;
 	width: fit-content;
+
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

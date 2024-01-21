@@ -23,6 +23,7 @@ void loop(){
 	if(client)
 		do {
 			if ( client.available() ) {
+				// Monta Requisicao http
 				client.println("HTTP/1.1 200 OK");
 				client.println("Content-Type: application/json");
 				client.println();
